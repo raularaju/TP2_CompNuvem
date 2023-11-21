@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: rauloliveira
+  name: project2-pv-rauloliveira
+  labels:
+    type: local
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: standard
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rauloliveira-playlist-recommender-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rauloliveira-playlist-recommender
+  template:
+    metadata:
+      labels:
+        app: rauloliveira-playlist-recommender
+    spec:
+      volumes:
+        - name: pvc-volume
+          persistentVolumeClaim:
+            claimName: project2-pv-rauloliveira
+      containers:
+      - name: rauloliveira-flask-app
+        image: quay.io/raularaju/flask_app:0.1
+        imagePullPolicy: Always
+        volumeMounts:
+            - name: pvc-volume
+              mountPath: app/shared
+        ports:
+        - containerPort: 32212
+      - name: rauloliveira-model
+        image: quay.io/raularaju/playlist-recommender:0.1
+        imagePullPolicy: Always
+        volumeMounts:
+            - name: pvc-volume
+              mountPath: app/shared
