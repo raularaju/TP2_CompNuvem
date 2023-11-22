@@ -41,7 +41,7 @@ spec:
               mountPath: app/shared
         ports:
         - containerPort: 32212
-      - name: rauloliveira-model
+      - name: rauloliveira-model-0.2
         image: quay.io/raularaju/playlist-recommender:0.2
         imagePullPolicy: Always
         volumeMounts:
@@ -49,4 +49,4 @@ spec:
               mountPath: app/shared
         env:
           - name: DATASET_URL
-            value: https://raw.githubusercontent.com/raularaju/TP2_CompNuvem/main/data/2023_spotify_ds3.csv
+            value: https://raw.githubusercontent.com/raularaju/TP2_CompNuvem/main/data/2023_spotify_ds2.csv
