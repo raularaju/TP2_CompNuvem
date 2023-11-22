@@ -26,7 +26,7 @@ spec:
   template:
     metadata:
       labels:
-        app: rauloliveira-playlist-model
+        app: rauloliveira-playlist-recommender
     spec:
       volumes:
         - name: pvc-volume
@@ -41,7 +41,7 @@ spec:
               mountPath: app/shared
         ports:
         - containerPort: 32212
-      - name: rauloliveira-model
+      - name: rauloliveira-model2
         image: quay.io/raularaju/playlist-recommender:0.2
         imagePullPolicy: Always
         volumeMounts:
