@@ -26,7 +26,7 @@ spec:
   template:
     metadata:
       labels:
-        app: rauloliveira-playlist-recommender
+        app: rauloliveira-playlist-model
     spec:
       volumes:
         - name: pvc-volume
