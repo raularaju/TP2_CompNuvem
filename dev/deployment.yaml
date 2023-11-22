@@ -49,4 +49,4 @@ spec:
               mountPath: app/shared
         env:
           - name: DATASET_URL
-            value: https://raw.githubusercontent.com/raularaju/TP2_CompNuvem/main/data/2023_spotify_ds2.csv
+            value: https://raw.githubusercontent.com/raularaju/TP2_CompNuvem/main/data/2023_spotify_ds1.csv
