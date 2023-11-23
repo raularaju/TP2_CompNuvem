@@ -41,8 +41,8 @@ spec:
               mountPath: app/shared
         ports:
         - containerPort: 32212
-      - name: rauloliveira-model-3
-        image: quay.io/raularaju/playlist-recommender:0.3
+      - name: rauloliveira-model-1
+        image: quay.io/raularaju/playlist-recommender:1.0
         imagePullPolicy: Always
         volumeMounts:
             - name: pvc-volume
