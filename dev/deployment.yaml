@@ -34,7 +34,7 @@ spec:
             claimName: project2-pv-rauloliveira
       containers:
       - name: rauloliveira-flask-app
-        image: quay.io/raularaju/flask_app:0.2
+        image: quay.io/raularaju/flask_app:0.3
         imagePullPolicy: Always
         volumeMounts:
             - name: pvc-volume
@@ -42,7 +42,7 @@ spec:
         ports:
         - containerPort: 32212
       - name: rauloliveira-model
-        image: quay.io/raularaju/playlist-recommender:0.2
+        image: quay.io/raularaju/playlist-recommender:0.3
         imagePullPolicy: Always
         volumeMounts:
             - name: pvc-volume
