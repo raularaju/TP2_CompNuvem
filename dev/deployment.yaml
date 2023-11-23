@@ -19,7 +19,7 @@ kind: Deployment
 metadata:
   name: rauloliveira-playlist-recommender-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: rauloliveira-playlist-recommender
@@ -41,7 +41,7 @@ spec:
               mountPath: app/shared
         ports:
         - containerPort: 32212
-      - name: rauloliveira-model
+      - name: rauloliveira-model-3
         image: quay.io/raularaju/playlist-recommender:0.3
         imagePullPolicy: Always
         volumeMounts:
