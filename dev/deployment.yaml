@@ -19,7 +19,7 @@ kind: Deployment
 metadata:
   name: rauloliveira-playlist-recommender-deployment
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: rauloliveira-playlist-recommender
